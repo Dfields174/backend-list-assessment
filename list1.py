@@ -26,8 +26,11 @@ __author__ = "???"
 
 
 def match_ends(words):
-    # your code here
-    return
+  count = 0
+  for i in words:
+    if len(i) >= 2 and i[-1] == i[0]:
+      count = count + 1
+  return count
 
 
 # B. front_x
@@ -42,8 +45,14 @@ def match_ends(words):
 
 
 def front_x(words):
-    # your code here
-    return
+    xFirst = []
+    oFirst = []
+    for word in words:
+        if word.startswith('x'):
+            xFirst.append(word)
+        else:
+            oFirst.append(word)
+    return sorted(xFirst) + sorted(oFirst)
 
 
 # C. sort_last
@@ -54,10 +63,10 @@ def front_x(words):
 #   [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 
-
-def sort_last(tuples):
-    # your code here
-    return
+def key(item): return item[1]
+ 
+def sort_last(tuple):
+    return sorted(tuple, key=key)
 
 
 # Provided simple test() function used in main() to print
