@@ -28,13 +28,12 @@ __author__ = "???"
 
 
 def remove_adjacent(nums):
-  i = 1
-  while i < len(nums):    
-    if nums[i] == nums[i-1]:
-      nums.pop(i)
-      i -= 1  
-    i += 1
-  return nums
+    result = []
+    for num in nums:
+        if not len(result) or num != result[-1]:
+            result.append(num)
+    return result
+  
 
 # E. linear_merge
 # Given two lists sorted in increasing order, create and
